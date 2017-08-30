@@ -1,0 +1,28 @@
+version: "3"
+services:
+  usti-server:
+    build:
+      context: .
+      dockerfile: Dockerfile-api-server
+    container_name: usti-server
+    volumes:
+      - ../usti-server/build/libs:/usr/local/usti-server
+    environment:
+      - MONGODB_URI=mongodb://usti-server-mongo:27017/usti-server
+    ports:
+      - 8080:8080
+      - 5005:5005
+    depends_on:
+      - usti-server-mongo
+
+  usti-myql:
+    image: mysql/mysql-server:5.7
+    container_name: usti-mysql
+    ports:
+      - "27017:27017"
+    environment:
+      - MYSQL_ROOT_PASSWORD=password
+      - MYSQL_USER=user
+      - MYSQL_PASSWORD=password
+    volumes:
+      - .data/mysql:/var/lib/mysql

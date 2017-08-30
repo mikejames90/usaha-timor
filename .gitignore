@@ -25,5 +25,5 @@ buildNumber.properties
 # Mac
 .DS_Store
 
-# docker run
-docker/.data
+# docker mysql
+docker/.mysql-data
