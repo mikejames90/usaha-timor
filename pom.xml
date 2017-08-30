@@ -13,7 +13,7 @@
     <groupId>com.et.usti</groupId>
     <artifactId>usti-timor</artifactId>
     <version>0.1-SNAPSHOT</version>
-    <packaging>pom</packaging>
+    <packaging>jar</packaging>
 
     <dependencies>
         <dependency>
@@ -44,19 +44,27 @@
     </dependencies>
 
     <build>
-        <pluginManagement>
-            <plugins>
-                <plugin>
-                    <groupId>org.apache.maven.plugins</groupId>
-                    <artifactId>maven-compiler-plugin</artifactId>
-                    <version>3.6.1</version>
-                    <configuration>
-                        <source>1.8</source>
-                        <target>1.8</target>
-                    </configuration>
-                </plugin>
-            </plugins>
-        </pluginManagement>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>3.6.1</version>
+                <configuration>
+                    <source>1.8</source>
+                    <target>1.8</target>
+                </configuration>
+            </plugin>
+
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-failsafe-plugin</artifactId>
+            </plugin>
+
+            <plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+            </plugin>
+        </plugins>
     </build>
 
 </project>
