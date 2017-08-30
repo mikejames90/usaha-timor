@@ -8,22 +8,25 @@ services:
     volumes:
       - ../target:/usr/local/executable-jar
     environment:
-      - MONGODB_URI=mongodb://usti-server-mongo:27017/usti-server
+      - DATASOURCE_URL=jdbc:mysql://mysql:3306/usti?useSSL=false
+      - MYSQL_USER=user
+      - MYSQL_PASSWORD=password
     ports:
-      - 8080:8080
-      - 5005:5005
+      - "8080:8080"
+      - "5005:5005"
     depends_on:
       - mysql
 
   mysql:
     image: mysql/mysql-server:5.7
     container_name: mysql
-    ports:
-      - "3306:3306"
     environment:
       - MYSQL_ROOT_PASSWORD=password
+      - MYSQL_DATABASE=usti
       - MYSQL_USER=user
       - MYSQL_PASSWORD=password
+    ports:
+      - "3306:3306"
     volumes:
       - .mysql-data:/var/lib/mysql
 
