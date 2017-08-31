@@ -22,6 +22,14 @@ buildNumber.properties
 *.iml
 *.iws
 
+# NetBeans
+nbproject/private/
+build/
+nbbuild/
+dist/
+nbdist/
+.nb-gradle/
+
 # Mac
 .DS_Store
 
