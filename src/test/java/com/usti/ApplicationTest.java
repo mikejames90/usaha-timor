@@ -30,6 +30,12 @@ public class ApplicationTest {
     }
 
     @Test
+    public void customerList() throws Exception {
+        mockMvc.perform(get("/customer"))
+               .andExpect(content().string(containsString("Customer List")));
+    }
+
+    @Test
     public void greeting() throws Exception {
         mockMvc.perform(get("/greeting"))
                 .andExpect(content().string(containsString("Hello, World!")));
