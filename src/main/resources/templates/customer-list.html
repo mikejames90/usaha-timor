@@ -9,6 +9,17 @@
 <body>
 <th:block layout:fragment="body">
     <h1>Customer List</h1>
+
+    <table class="table table-stripped">
+        <tr>
+            <th>#</th>
+            <th>Name</th>
+        </tr>
+        <tr th:each="customer : ${customerList}">
+            <td th:text="${customer.id}">1</td>
+            <td th:text="${customer.name}">John Smith</td>
+        </tr>
+    </table>
 </th:block>
 </body>
 </html>
