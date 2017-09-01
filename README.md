@@ -1,3 +1,9 @@
+# Prerequisite
+- Java JDK
+- JAVA_HOME environment variable is set
+- IDE (Eclipse, NetBeans or IntellJ)
+- Docker (optional), recommended
+
 # How to build
 ```
 mvnw clean package
