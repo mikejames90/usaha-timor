@@ -6,7 +6,7 @@ services:
       dockerfile: Dockerfile
     container_name: web
     volumes:
-      - ../target:/usr/local/executable-jar
+      - ../target:/usr/local/executable-jar:cached
     environment:
       - DATASOURCE_URL=jdbc:mysql://mysql:3306/usti?useSSL=false
       - MYSQL_USER=user
