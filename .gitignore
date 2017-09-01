@@ -35,3 +35,8 @@ nbdist/
 
 # docker mysql
 docker/.mysql-data
+
+# frontend
+node_modules/
+node/
+npm-debug.log
