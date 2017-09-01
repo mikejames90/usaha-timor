@@ -1,10 +1,14 @@
 <!DOCTYPE HTML>
-<html xmlns:th="http://www.thymeleaf.org">
+<html
+        xmlns:th="http://www.thymeleaf.org"
+        xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+        layout:decorator="layout/main-layout">
 <head>
-    <title>Customer List</title>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <title>Usaha Timor</title>
 </head>
 <body>
-<p>Customer List</p>
+<th:block layout:fragment="body">
+    <h1>Customer List</h1>
+</th:block>
 </body>
 </html>
