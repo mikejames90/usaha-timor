@@ -10,14 +10,24 @@
 <th:block layout:fragment="body">
     <h1>Customer List</h1>
 
+    <button type="button" class="btn btn-success">
+        <i class="fa fa-plus" aria-hidden="true"></i>
+    </button>
+
     <table class="table table-stripped">
         <tr>
             <th>#</th>
             <th>Name</th>
+            <th></th>
         </tr>
         <tr th:each="customer : ${customerList}">
             <td th:text="${customer.id}">1</td>
             <td th:text="${customer.name}">John Smith</td>
+            <td>
+                <button type="button" class="btn btn-default">
+                    <i class="fa fa-pencil" aria-hidden="true"></i>
+                </button>
+            </td>
         </tr>
     </table>
 </th:block>
