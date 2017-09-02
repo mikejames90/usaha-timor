@@ -40,3 +40,4 @@ docker/.mysql-data
 node_modules/
 node/
 npm-debug.log
+!src/main/frontend/build
