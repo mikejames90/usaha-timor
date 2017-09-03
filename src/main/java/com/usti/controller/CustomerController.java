@@ -8,21 +8,19 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RestController;
 
-@Controller
+@RestController
 @RequestMapping("/customer")
 public class CustomerController {
 
     @Autowired
     private CustomerRepository customerRepository;
 
-    @RequestMapping(method = RequestMethod.GET)
-    private String customerList(Model model) {
+    @RequestMapping(path = "/list", method = RequestMethod.GET)
+    private Iterable<Customer> customerList(Model model) {
         PageRequest pageRequest = new PageRequest(0, 50);
 
-        Iterable<Customer> customerList = customerRepository.findAll(pageRequest);
-
-        model.addAttribute("customerList", customerList);
-        return "customer-list";
+        return customerRepository.findAll(pageRequest);
     }
 }
