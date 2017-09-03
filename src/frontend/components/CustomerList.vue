@@ -15,7 +15,7 @@
       <tr v-if="loading">
         <td colspan="3">Loading....</td>
       </tr>
-      <tr v-else-if="customerListResponse.numberOfElements" v-for="customer in customerListResponse.content">
+      <tr v-else-if="customerListResponse.numberOfElements > 0" v-for="customer in customerListResponse.content">
         <td>{{customer.id}}</td>
         <td>{{customer.name}}</td>
         <td>
@@ -29,7 +29,11 @@
       </tr>
     </table>
 
-    <customer-editor :show="customerInEditor != null" :customer="customerInEditor" @saved="fetchData"></customer-editor>
+    <customer-editor
+      :show="customerInEditor != null"
+      :customer="customerInEditor"
+      @saved="resetAndReload()">
+    </customer-editor>
 
   </div>
 </template>
@@ -39,7 +43,7 @@
 
   export default {
     components: {
-        CustomerEditor
+      CustomerEditor
     },
     data() {
       return {
@@ -57,6 +61,10 @@
       '$route': 'fetchData'
     },
     methods: {
+      resetAndReload() {
+        this.customerInEditor = null;
+        this.fetchData();
+      },
       fetchData () {
         this.error = this.customerListResponse = null;
         this.loading = true;
@@ -76,12 +84,12 @@
           );
       },
       addCustomer() {
-          this.customerInEditor = {
-              name: null
-          };
+        this.customerInEditor = {
+          name: null
+        };
       },
       editCustomer(customer) {
-          this.customerInEditor = customer;
+        this.customerInEditor = customer;
       }
     }
   }
