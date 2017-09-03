@@ -24,7 +24,7 @@ public class ApplicationTest {
 
     @Test
     public void customerList() throws Exception {
-        mockMvc.perform(get("/customer"))
+        mockMvc.perform(get("/customer/list"))
                .andExpect(content().string(containsString("Customer List")));
     }
 
