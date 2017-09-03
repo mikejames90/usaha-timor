@@ -47,3 +47,7 @@ the database with following command
 cd docker
 docker-compose up mysql
 ```
+
+# Useful Documentation
+https://vuejs.org/v2/guide/
+https://bootstrap-vue.js.org/docs

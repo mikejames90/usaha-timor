@@ -2,9 +2,9 @@
   <div>
     <h1>Customer List</h1>
 
-    <button type="button" class="btn btn-success">
+    <b-button variant="primary" @click="addCustomer()">
       <i class="fa fa-plus" aria-hidden="true"></i>
-    </button>
+    </b-button>
 
     <table class="table table-stripped">
       <tr>
@@ -19,9 +19,9 @@
         <td>{{customer.id}}</td>
         <td>{{customer.name}}</td>
         <td>
-          <button type="button" class="btn btn-default">
+          <b-button @click="editCustomer(customer)">
             <i class="fa fa-pencil" aria-hidden="true"></i>
-          </button>
+          </b-button>
         </td>
       </tr>
       <tr v-else>
@@ -29,17 +29,24 @@
       </tr>
     </table>
 
+    <customer-editor :show="customerInEditor != null" :customer="customerInEditor" @saved="fetchData"></customer-editor>
+
   </div>
 </template>
 <script>
   import axios from 'axios';
+  import CustomerEditor from './CustomerEditorModal.vue';
 
   export default {
+    components: {
+        CustomerEditor
+    },
     data() {
       return {
         loading: false,
         customerListResponse: null,
-        error: null
+        error: null,
+        customerInEditor: null
       }
     },
     created() {
@@ -67,6 +74,14 @@
               this.customerListResponse = null;
             }
           );
+      },
+      addCustomer() {
+          this.customerInEditor = {
+              name: null
+          };
+      },
+      editCustomer(customer) {
+          this.customerInEditor = customer;
       }
     }
   }
