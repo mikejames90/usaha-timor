@@ -25,8 +25,6 @@ public class ApplicationTest {
 
   @Test
   public void customerList() throws Exception {
-
-
     mockMvc.perform(get("/customer/list"))
       .andExpect(status().isOk())
       .andExpect(content().contentType(MediaType.APPLICATION_JSON_UTF8));
