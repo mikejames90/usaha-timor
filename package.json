@@ -5,8 +5,6 @@
   "author": "ericktimothy <ericktimothy@gmail.com>",
   "private": true,
   "scripts": {
-    "dev": "node src/frontend/build/dev-server.js",
-    "start": "node src/frontend/build/dev-server.js",
     "build": "node src/frontend/build/build.js",
     "build-watch": "node src/frontend/build/build-watch.js",
     "unit": "cross-env BABEL_ENV=test karma start src/frontend/test/unit/karma.conf.js --single-run",
