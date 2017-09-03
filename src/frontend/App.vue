@@ -28,6 +28,7 @@
 
 <style lang="scss">
   @import "~bootstrap/scss/bootstrap";
+  @import "~font-awesome/css/font-awesome.min.css";
 
   body {
     padding-top: 3.5rem;
