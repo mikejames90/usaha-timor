@@ -51,5 +51,7 @@ docker-compose up mysql
 # Useful Documentation
 https://vuejs.org/v2/guide/
 https://bootstrap-vue.js.org/docs
+http://www.liquibase.org/documentation/
+https://docs.spring.io/spring-boot/docs/current/reference/htmlsingle/
 
 sjdfkljslkfjsdklfjsdlkfjlsdkfs
