@@ -24,7 +24,7 @@ docker-compose up
 - Make sure database is running
 - Run following command
 ```
-java -jar target/usaha-timor-*.jar 
+java -jar target/usaha-timor-*.jar
 ```
 
 - By default application will look for database at:
@@ -36,7 +36,7 @@ spring.datasource.password=password
 
 - If you need to modify this database connection
 ```
-java -Dspring.datasource.url=<JDBC URL> -Dspring.datasource.username=<DB_USERNAME> -Dspring.datasource.password=<DB_PASSWORD> -jar target/usaha-timor-*.jar 
+java -Dspring.datasource.url=<JDBC URL> -Dspring.datasource.username=<DB_USERNAME> -Dspring.datasource.password=<DB_PASSWORD> -jar target/usaha-timor-*.jar
 
 ```
 
@@ -51,3 +51,5 @@ docker-compose up mysql
 # Useful Documentation
 https://vuejs.org/v2/guide/
 https://bootstrap-vue.js.org/docs
+
+sjdfkljslkfjsdklfjsdlkfjlsdkfs

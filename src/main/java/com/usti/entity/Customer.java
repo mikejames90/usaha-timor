@@ -12,6 +12,7 @@ public class Customer {
   @GeneratedValue(strategy = GenerationType.AUTO)
   private Long id;
   private String name;
+  private String phone;
 
   public Long getId() {
     return id;
@@ -27,6 +28,14 @@ public class Customer {
 
   public void setName(String name) {
     this.name = name;
+  }
+
+  public String getPhone() {
+    return phone;
+  }
+
+  public void setPhone(String phone) {
+    this.phone = phone;
   }
 
   @Override
